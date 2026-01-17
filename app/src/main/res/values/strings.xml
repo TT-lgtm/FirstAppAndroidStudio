@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FirstAppAndroidStudio</string>
+    <string name="text_text">Нажмите кнопку</string>
+    <string name="text_button_start">Подкинуть</string>
 </resources>
