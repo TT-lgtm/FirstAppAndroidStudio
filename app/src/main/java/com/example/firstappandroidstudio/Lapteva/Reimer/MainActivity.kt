@@ -1,15 +1,18 @@
 package com.example.firstappandroidstudio.Lapteva.Reimer
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.widget.ImageView
 import android.widget.Button
+import android.widget.TextView
+import com.example.firstappandroidstudio.Lapteva.Reimer.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,19 +22,17 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val imageDice: ImageView = findViewById(R.id.imageView)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val buttonRoll: Button = findViewById(R.id.button_start)
-        val diceImages = intArrayOf(
-            R.drawable.dice_1,
-            R.drawable.dice_2,
-            R.drawable.dice_3,
-            R.drawable.dice_4,
-            R.drawable.dice_5,
-            R.drawable.dice_6
-        )
+        val diceTextView: TextView = findViewById(R.id.textView_diceNum)
         buttonRoll.setOnClickListener {
             val randomNumber = Random.nextInt(1, 7)
-            imageDice.setImageResource(diceImages[randomNumber - 1])
+            diceTextView.text = randomNumber.toString()
         }
+        binding.textViewConst.text = getString(R.string.program_ex)
+        binding.text.text = getString(R.string.text_text)
+        binding.buttonStart.text = getString(R.string.text_button_start)
+
     }
 }

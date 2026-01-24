@@ -2,4 +2,5 @@
     <string name="app_name">FirstAppAndroidStudio</string>
     <string name="text_text">Нажмите кнопку</string>
     <string name="text_button_start">Подкинуть</string>
+    <string name="program_ex">Нажмите на кнопку чтобы получить случайное число от 1 до 6</string>
 </resources>
